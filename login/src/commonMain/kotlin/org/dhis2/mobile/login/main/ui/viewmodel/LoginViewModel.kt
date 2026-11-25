@@ -41,6 +41,11 @@ class LoginViewModel(
     private fun goToInitialScreen() {
         launchUseCase {
             val destination = getInitialScreen()
+            if (destination is LoginScreenState.ServerValidation) {
+                _serverValidationState.update {
+                    it.copy(currentServer = destination.currentServer)
+                }
+            }
             navigator.navigate(
                 destination = destination,
                 navOptions = {

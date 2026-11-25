@@ -118,7 +118,7 @@ android {
     testNamespace = "org.dhis2.test"
 
     defaultConfig {
-        applicationId = "com.dhis2"
+        applicationId = "org.lastmilehealth.liberia.dhis2"
         targetSdk = libs.versions.sdk.get().toInt()
         minSdk = libs.versions.minSdk.get().toInt()
         versionCode = libs.versions.vCode.get().toInt()

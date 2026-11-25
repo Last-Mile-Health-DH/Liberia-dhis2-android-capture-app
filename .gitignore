@@ -14,3 +14,9 @@
 .kotlin/
 __pycache__/
 *.pyc
+# Local build outputs and heap dumps
+*.hprof
+*.apk
+*.aab
+/app/dhis2/
+build/

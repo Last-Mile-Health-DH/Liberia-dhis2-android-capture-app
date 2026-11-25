@@ -1,5 +1,6 @@
 package org.dhis2.mobile.login.main.domain.usecase
 
+import org.dhis2.mobile.login.BrandConfig
 import org.dhis2.mobile.login.accounts.data.repository.AccountRepository
 import org.dhis2.mobile.login.accounts.domain.model.AccountModel
 import org.dhis2.mobile.login.main.domain.model.LoginScreenState
@@ -15,7 +16,7 @@ class GetInitialScreen(
         return when {
             accounts.isEmpty() ->
                 LoginScreenState.ServerValidation(
-                    currentServer = "",
+                    currentServer = BrandConfig.DEFAULT_SERVER_URL,
                     availableServers = accountRepository.availableServers(),
                     hasAccounts = false,
                 )

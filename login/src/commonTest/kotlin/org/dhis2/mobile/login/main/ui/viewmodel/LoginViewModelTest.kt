@@ -100,7 +100,7 @@ class LoginViewModelTest {
                 )
 
             viewModel.serverValidationState.test(timeout = 5.seconds) {
-                assertEquals(ServerValidationUiState(), awaitItem())
+                assertEquals(ServerValidationUiState(currentServer = "https://test.dhis2.org"), awaitItem())
 
                 viewModel.onValidateServer(serverUrl)
 
@@ -143,7 +143,7 @@ class LoginViewModelTest {
                 )
 
             viewModel.serverValidationState.test {
-                assertEquals(ServerValidationUiState(), awaitItem())
+                assertEquals(ServerValidationUiState(currentServer = "https://test.dhis2.org"), awaitItem())
 
                 viewModel.onValidateServer("any")
 

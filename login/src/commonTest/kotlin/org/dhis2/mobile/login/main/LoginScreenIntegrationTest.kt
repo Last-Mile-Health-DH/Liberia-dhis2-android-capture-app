@@ -8,6 +8,7 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
 import org.dhis2.mobile.commons.network.NetworkStatusProvider
+import org.dhis2.mobile.login.BrandConfig
 import org.dhis2.mobile.login.accounts.data.repository.AccountRepository
 import org.dhis2.mobile.login.accounts.domain.model.AccountModel
 import org.dhis2.mobile.login.main.data.LoginRepository
@@ -91,7 +92,7 @@ class LoginScreenIntegrationTest {
             verify(navigator).navigate(
                 eq(
                     LoginScreenState.ServerValidation(
-                        currentServer = "",
+                        currentServer = BrandConfig.DEFAULT_SERVER_URL,
                         availableServers = emptyList(),
                         hasAccounts = false,
                     ),
